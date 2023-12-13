@@ -14,7 +14,7 @@ void push(stack_t **stk, unsigned int line_number)
 
 	if (!STACK_NUM || !is_int(STACK_NUM))
 	{
-		error("L");	
+		error("L");
 		line = itoa(line_number, 10);
 		error(line);
 		error(": usage: push integer");
@@ -76,7 +76,7 @@ void pint(stack_t **stk, unsigned int line_number)
 	(void)line_number;
 	if (head == NULL)
 	{
-		error("L");	
+		error("L");
 		line = itoa(line_number, 10);
 		error(line);
 		error(": can't pint, stack empty");

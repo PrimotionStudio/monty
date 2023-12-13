@@ -80,8 +80,8 @@ void exec_line(char buffer[BUFFER_SIZE], int line_number, stack_t **stk)
 	opcode = strtok(buffer, " ");
 
 	/** Handle a comment */
-	/**if (strcmp(opcode[0], "#"))
-	  return;*/
+	if ((opcode != NULL && opcode[0] == '#') || opcode == NULL)
+		return;
 	value = strtok(NULL, " ");
 	if (value == NULL)
 		set_stack_value(NULL);
