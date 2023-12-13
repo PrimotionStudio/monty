@@ -34,35 +34,19 @@ instruction_t is_cmd_acceptable(char *cmd, int line_number)
 	exit(EXIT_FAILURE);
 }
 
-void exec_line(char buffer[BUFFER_SIZE], int line_number)
+void exec_line(char buffer[BUFFER_SIZE], int line_number, stack_t **stk)
 {
-	extern stack_t *stk;
 	char *opcode, *value;
 	instruction_t ins;
 
-        opcode = strtok(buffer, " ");
-        // if (strcmp(opcode, "pall"))
-        // 	pall(stk, line_number);
-        // else
-        // {
-
+	opcode = strtok(buffer, " ");
 	value = strtok(NULL, " ");
 	if (value == NULL)
 		set_stack_value(NULL);
 	else
 		set_stack_value(value);
 	ins = is_cmd_acceptable(opcode, line_number);
-	ins.f(&stk, line_number);
-        // }
-
-        // Print Stack
-        printf("\n----\n");
-        int i = 0;
-        while (stk)
-        {
-        	printf("Node %d: %d\n", i++, (stk)->n);
-        	stk = (stk)->next;
-        }
+	ins.f(stk, line_number);
 }
 
 char *itoa(int num, int base)
