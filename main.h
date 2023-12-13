@@ -44,7 +44,20 @@ char *itoa(int num, int base);
 instruction_t is_cmd_acceptable(char *cmd, int line_number);
 void exec_line(char buffer[BUFFER_SIZE], int line_number, stack_t **stk);
 void set_stack_value(char *value);
+int is_int(const char *str);
 void push(stack_t **stk, unsigned int line_number);
 void pall(stack_t **stk, unsigned int line_number);
+void pint(stack_t **stk, unsigned int line_number);
+void pop(stack_t **stk, unsigned int line_number);
+void swap(stack_t **stk, unsigned int line_number);
+void add(stack_t **stk, unsigned int line_number);
+void nop(stack_t **stk, unsigned int line_number);
+void sub(stack_t **stk, unsigned int line_number);
+void _div(stack_t **stk, unsigned int line_number);
+void mul(stack_t **stk, unsigned int line_number);
+void mod(stack_t **stk, unsigned int line_number);
+void pchar(stack_t **stk, unsigned int line_number);
+void pstr(stack_t **stk, unsigned int line_number);
+void rotl(stack_t **stk, unsigned int line_number);
 
 #endif

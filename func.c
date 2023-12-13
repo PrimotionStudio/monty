@@ -16,6 +16,18 @@ instruction_t is_cmd_acceptable(char *cmd, int line_number)
 	instruction_t ins[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
+		{"div", _div},
+		{"mul", mul},
+		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 
@@ -40,6 +52,10 @@ void exec_line(char buffer[BUFFER_SIZE], int line_number, stack_t **stk)
 	instruction_t ins;
 
 	opcode = strtok(buffer, " ");
+
+	/** Handle a comment */
+	/**if (strcmp(opcode[0], "#"))
+	  return;*/
 	value = strtok(NULL, " ");
 	if (value == NULL)
 		set_stack_value(NULL);
