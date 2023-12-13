@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * push - Pushes an element onto the stack
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void push(stack_t **stk, unsigned int line_number)
 {
 	extern char *STACK_NUM;
@@ -16,15 +21,6 @@ void push(stack_t **stk, unsigned int line_number)
 		error("\n");
 		exit(EXIT_FAILURE);
 	}
-	/**if (!STACK_NUM || atoi(STACK_NUM) == 0)
-	  {
-	  error("L");	
-	  line = itoa(line_number, 10);
-	  error(line);
-	  error(": usage: push integer");
-	  error("\n");
-	  exit(EXIT_FAILURE);
-	  }*/
 	new = (stack_t *)malloc(sizeof(stack_t));
 	if (!new)
 	{
@@ -51,6 +47,11 @@ void push(stack_t **stk, unsigned int line_number)
 	}
 }
 
+/**
+ * pall - Prints all the elements in the stack
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void pall(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;
@@ -62,6 +63,11 @@ void pall(stack_t **stk, unsigned int line_number)
 	printf("%d\n", head->n);
 }
 
+/**
+ * pint - Prints the value at the top of the stack
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void pint(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;
@@ -87,6 +93,12 @@ void pint(stack_t **stk, unsigned int line_number)
 	printf("%d\n", head->n);
 	return;
 }
+
+/**
+ * pop - Removes the top element of the stack
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void pop(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;
@@ -115,6 +127,11 @@ void pop(stack_t **stk, unsigned int line_number)
 	return;
 }
 
+/**
+ * swap - Swaps the top two elements of the stack
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void swap(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;

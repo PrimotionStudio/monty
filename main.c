@@ -2,6 +2,12 @@
 
 char *STACK_NUM;
 
+/**
+ * main - Entry point for the Monty bytecode interpreter
+ * @argc: Number of command-line arguments
+ * @argv: Array of strings containing the command-line arguments
+ * Return: EXIT_SUCCESS on success, EXIT_FAILURE on failure
+ */
 int main(int argc, char const *argv[])
 {
 	FILE *fp;

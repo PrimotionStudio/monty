@@ -1,14 +1,34 @@
 #include "monty.h"
 
+/**
+ * error - Prints an error message and exits the program
+ * @str: The error message to be printed
+ */
 void error(char *str)
 {
 	write(STDERR_FILENO, str, strlen(str));
 }
+
+
+/**
+ * set_stack_value - Sets a global variable to the specified value
+ * @value: The value to set the global variable to
+ */
 void set_stack_value(char *value)
 {
 	extern char *STACK_NUM;
 	STACK_NUM = value;
 }
+
+/**
+ * is_cmd_acceptable - Checks if a command is acceptable and returns the
+ * corresponding instruction_t structure
+ * @cmd: The command to check
+ * @line_number: The line number in the Monty bytecode file
+ *
+ * Return: The corresponding instruction_t structure or a default structure
+ *         if the command is not acceptable
+ */
 instruction_t is_cmd_acceptable(char *cmd, int line_number)
 {
 	char *line;
@@ -46,6 +66,12 @@ instruction_t is_cmd_acceptable(char *cmd, int line_number)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * exec_line - Executes the instructions from a line in the Monty bytecode file
+ * @buffer: The buffer containing the line from the bytecode file
+ * @line_number: The line number in the Monty bytecode file
+ * @stk: A pointer to the head of the stack
+ */
 void exec_line(char buffer[BUFFER_SIZE], int line_number, stack_t **stk)
 {
 	char *opcode, *value;
@@ -65,6 +91,13 @@ void exec_line(char buffer[BUFFER_SIZE], int line_number, stack_t **stk)
 	ins.f(stk, line_number);
 }
 
+/**
+ * itoa - Converts an integer to a string representation in the specified base
+ * @num: The integer to convert
+ * @base: The base for the conversion
+ *
+ * Return: A pointer to the resulting string
+ */
 char *itoa(int num, int base)
 {
 	int is_negative = 0, length, temp, start, end, i, rem;

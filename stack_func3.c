@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * mod - Computes the remainder of dividing the second top element
+ *       of the stack by the top element
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void mod(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;
@@ -31,6 +37,11 @@ void mod(stack_t **stk, unsigned int line_number)
 	return;
 }
 
+/**
+ * pchar - Prints the character at the top of the stack
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void pchar(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;
@@ -79,6 +90,11 @@ void pchar(stack_t **stk, unsigned int line_number)
 	}
 }
 
+/**
+ * pstr - Prints the string starting at the top of the stack
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void pstr(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;
@@ -112,6 +128,12 @@ void pstr(stack_t **stk, unsigned int line_number)
 	return;
 }
 
+/**
+ * is_int - Checks if a string represents a valid integer
+ * @str: The string to be checked
+ *
+ * Return: 1 if the string is a valid integer, 0 otherwise
+ */
 int is_int(const char *str)
 {
 	if (*str == '\0')
@@ -125,7 +147,11 @@ int is_int(const char *str)
 	return (1);
 }
 
-
+/**
+ * rotl - Rotates the stack to the top
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void rotl(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;
