@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 char *STACK_NUM;
 

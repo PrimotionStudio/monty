@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 void mod(stack_t **stk, unsigned int line_number)
 {
