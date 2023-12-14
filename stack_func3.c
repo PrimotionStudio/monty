@@ -162,19 +162,10 @@ int is_int(const char *str)
 void rotl(stack_t **stk, unsigned int line_number)
 {
 	stack_t *head = *stk;
-	char *line;
 
 	(void)line_number;
 	if (head == NULL || head->next == NULL)
-	{
-		error("L");	
-		line = itoa(line_number, 10);
-		error(line);
-		error(": can't rotl, stack too short");
-		error("\n");
-		free(line);
-		exit(EXIT_FAILURE);
-	}
+		return;
 	while (head->next != NULL)
 		head = head->next;
 	head->next = *stk;
