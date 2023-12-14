@@ -37,6 +37,6 @@ int main(int argc, char const *argv[])
 		exec_line(buffer, line_number, &stk);
 	}
 	fclose(fp);
-	free_stk(&stk);
+	/* free_stk(&stk); */
 	return 0;
 }

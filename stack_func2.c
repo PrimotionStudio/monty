@@ -16,7 +16,7 @@ void add(stack_t **stk, unsigned int line_number)
 		error("L");	
 		line = itoa(line_number, 10);
 		error(line);
-		error(":can't add, stack too short");
+		error(": can't add, stack too short");
 		error("\n");
 		free(line);
 		exit(EXIT_FAILURE);
@@ -54,7 +54,7 @@ void sub(stack_t **stk, unsigned int line_number)
 		error("L");	
 		line = itoa(line_number, 10);
 		error(line);
-		error(":can't sub, stack too short");
+		error(": can't sub, stack too short");
 		error("\n");
 		free(line);
 		exit(EXIT_FAILURE);
@@ -82,7 +82,7 @@ void _div(stack_t **stk, unsigned int line_number)
 		error("L");	
 		line = itoa(line_number, 10);
 		error(line);
-		error(":can't div, stack too short");
+		error(": can't div, stack too short");
 		error("\n");
 		free(line);
 		exit(EXIT_FAILURE);
@@ -120,7 +120,7 @@ void mul(stack_t **stk, unsigned int line_number)
 		error("L");	
 		line = itoa(line_number, 10);
 		error(line);
-		error(":can't mul, stack too short");
+		error(": can't mul, stack too short");
 		error("\n");
 		free(line);
 		exit(EXIT_FAILURE);

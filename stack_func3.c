@@ -17,7 +17,7 @@ void mod(stack_t **stk, unsigned int line_number)
 		error("L");	
 		line = itoa(line_number, 10);
 		error(line);
-		error(":can't mod, stack too short");
+		error(": can't mod, stack too short");
 		error("\n");
 		free(line);
 		exit(EXIT_FAILURE);
@@ -55,7 +55,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 		error("L");	
 		line = itoa(line_number, 10);
 		error(line);
-		error(":can't pchar, stack empty");
+		error(": can't pchar, stack empty");
 		error("\n");
 		free(line);
 		exit(EXIT_FAILURE);
@@ -72,7 +72,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 			error("L");
 			line = itoa(line_number, 10);
 			error(line);
-			error(":can't pchar, value out of range");
+			error(": can't pchar, value out of range");
 			error("\n");
 			free(line);
 			exit(EXIT_FAILURE);
@@ -88,7 +88,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 		error("L");
 		line = itoa(line_number, 10);
 		error(line);
-		error(":can't pchar, value out of range");
+		error(": can't pchar, value out of range");
 		error("\n");
 		free(line);
 		exit(EXIT_FAILURE);
@@ -170,7 +170,7 @@ void rotl(stack_t **stk, unsigned int line_number)
 		error("L");	
 		line = itoa(line_number, 10);
 		error(line);
-		error(":can't rotl, stack too short");
+		error(": can't rotl, stack too short");
 		error("\n");
 		free(line);
 		exit(EXIT_FAILURE);
