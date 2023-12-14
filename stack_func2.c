@@ -18,6 +18,7 @@ void add(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(":can't add, stack too short");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	while (head->next != NULL)
@@ -55,6 +56,7 @@ void sub(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(":can't sub, stack too short");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	while (head->next != NULL)
@@ -82,6 +84,7 @@ void _div(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(":can't div, stack too short");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	while (head->next != NULL)
@@ -93,6 +96,7 @@ void _div(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(": division by zero");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	head->prev->n = head->prev->n / head->n;
@@ -118,6 +122,7 @@ void mul(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(":can't mul, stack too short");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	while (head->next != NULL)

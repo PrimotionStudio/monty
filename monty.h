@@ -6,8 +6,12 @@
 #include <stddef.h>
 #include <string.h>
 #include <unistd.h>
+#include <ctype.h>
 
 #define BUFFER_SIZE 1000
+
+extern char *STACK_NUM;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -59,5 +63,6 @@ void mod(stack_t **stk, unsigned int line_number);
 void pchar(stack_t **stk, unsigned int line_number);
 void pstr(stack_t **stk, unsigned int line_number);
 void rotl(stack_t **stk, unsigned int line_number);
+void free_stk(stack_t **stk);
 
 #endif

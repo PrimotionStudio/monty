@@ -19,6 +19,7 @@ void mod(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(":can't mod, stack too short");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	while (head->next != NULL)
@@ -30,6 +31,7 @@ void mod(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(": division by zero");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	head->prev->n = head->prev->n % head->n;
@@ -55,6 +57,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(":can't pchar, stack empty");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	if (head->next == NULL)
@@ -71,6 +74,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 			error(line);
 			error(":can't pchar, value out of range");
 			error("\n");
+			free(line);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -86,6 +90,7 @@ void pchar(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(":can't pchar, value out of range");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -138,10 +143,12 @@ int is_int(const char *str)
 {
 	if (*str == '\0')
 		return (0);
+	if (*str == '-')
+		str++;
 	while (*str != '\0')
 	{
-		if (*str < '0' || *str > '9')
-			return (0);
+		if (!isdigit(*str))
+			return 0;
 		str++;
 	}
 	return (1);
@@ -165,6 +172,7 @@ void rotl(stack_t **stk, unsigned int line_number)
 		error(line);
 		error(":can't rotl, stack too short");
 		error("\n");
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	while (head->next != NULL)

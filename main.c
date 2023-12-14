@@ -1,6 +1,7 @@
 #include "monty.h"
 
 char *STACK_NUM;
+void free_stack(stack_t *stack);
 
 /**
  * main - Entry point for the Monty bytecode interpreter
@@ -35,7 +36,7 @@ int main(int argc, char const *argv[])
 		++line_number;
 		exec_line(buffer, line_number, &stk);
 	}
-
 	fclose(fp);
+	free_stk(&stk);
 	return 0;
 }

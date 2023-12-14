@@ -16,7 +16,6 @@ void error(char *str)
  */
 void set_stack_value(char *value)
 {
-	extern char *STACK_NUM;
 	STACK_NUM = value;
 }
 
@@ -63,6 +62,7 @@ instruction_t is_cmd_acceptable(char *cmd, int line_number)
 	error(": unknown instruction ");
 	error(cmd);
 	error("\n");
+	free(line);
 	exit(EXIT_FAILURE);
 }
 
@@ -86,7 +86,7 @@ void exec_line(char buffer[BUFFER_SIZE], int line_number, stack_t **stk)
 	if (value == NULL)
 		set_stack_value(NULL);
 	else
-		set_stack_value(value);
+		set_stack_value((char *)value);
 	ins = is_cmd_acceptable(opcode, line_number);
 	ins.f(stk, line_number);
 }
@@ -121,14 +121,10 @@ char *itoa(int num, int base)
 		error("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	i = 0;
-	for (; num != 0; num /= base)
+	for (i = 0; num != 0; num /= base)
 	{
 		rem = num % base;
-		if (rem > 9)
-			str[i++] = (rem - 10) + 'a';
-		else
-			str[i++] = rem + '0';
+		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
 	}
 	if (is_negative && base == 10)
 		str[i++] = '-';
