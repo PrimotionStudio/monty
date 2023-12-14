@@ -110,7 +110,7 @@ void pop(stack_t **stk, unsigned int line_number)
 		error("L");	
 		line = itoa(line_number, 10);
 		error(line);
-		error(": can't pop an stack empty");
+		error(": can't pop an empty stack");
 		error("\n");
 		exit(EXIT_FAILURE);
 	}
