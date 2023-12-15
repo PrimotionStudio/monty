@@ -17,7 +17,7 @@ To dive into the world of Monty Python, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/PrimotionStudio/MontyPythonInterpreter.git
+    git clone https://github.com/PrimotionStudio/monty.git
     ```
 
 2. Compile the interpreter:
@@ -27,7 +27,7 @@ To dive into the world of Monty Python, follow these steps:
 
 3. Run your first Monty Python script:
     ```bash
-    ./monty your_script.mpy
+    ./monty your_script.m
     ```
 
 ## Commands
