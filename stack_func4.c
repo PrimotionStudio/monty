@@ -38,13 +38,14 @@ void free_stk(stack_t **stk)
  */
 void rotr(stack_t **stk, unsigned int line_number)
 {
-	stack_t *head = *stk, *tmp = (*stk)->next;
+	stack_t *head = *stk, *tmp;
 
 	(void)line_number;
 	if (head == NULL || head->next == NULL)
 		return;
 	while (head->next != NULL)
 		head = head->next;
+	tmp = (*stk)->next;
 	(*stk)->next->prev = NULL;
 	head->next = *stk;
 	(*stk)->next = NULL;
