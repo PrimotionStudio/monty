@@ -64,5 +64,6 @@ void pchar(stack_t **stk, unsigned int line_number);
 void pstr(stack_t **stk, unsigned int line_number);
 void rotl(stack_t **stk, unsigned int line_number);
 void free_stk(stack_t **stk);
+void rotr(stack_t **stk, unsigned int line_number);
 
 #endif

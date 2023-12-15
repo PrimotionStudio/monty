@@ -30,3 +30,25 @@ void free_stk(stack_t **stk)
 		cur = tmp;
 	}
 }
+
+/**
+ * rotr - Rotates the stack to the bottom
+ * @stk: A pointer to the head of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
+void rotr(stack_t **stk, unsigned int line_number)
+{
+	stack_t *head = *stk, *tmp = (*stk)->next;
+
+	(void)line_number;
+	if (head == NULL || head->next == NULL)
+		return;
+	while (head->next != NULL)
+		head = head->next;
+	(*stk)->next->prev = NULL;
+	head->next = *stk;
+	(*stk)->next = NULL;
+	(*stk)->prev = head;
+	*stk = tmp;
+	return;
+}

@@ -47,6 +47,7 @@ instruction_t is_cmd_acceptable(char *cmd, int line_number)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 
