@@ -118,7 +118,7 @@ void pstr(stack_t **stk, unsigned int line_number)
 	}
 	while (head->next != NULL)
 		head = head->next;
-	while (head->prev != NULL)
+	while (head != NULL)
 	{
 		if (head->n > 0 && head->n <= 127)
 			printf("%c", (char)head->n);
