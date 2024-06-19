@@ -53,9 +53,59 @@ Our interpreter supports a variety of Pythonic commands. Here are some examples:
     add
     ```
 
+- **SUB:** Subtracts the top element of the stack from the second top element.
+    ```python
+    sub
+    ```
+
 - **NOP:** No operation. It does nothing (seriously!).
     ```python
     nop
+    ```
+
+- **PALL:** Prints all the elements in the stack.
+    ```python
+    pall
+    ```
+
+- **PINT:** Prints the value at the top of the stack.
+    ```python
+    pint
+    ```
+
+- **MUL:** Multiplies the second top element of the stack by the top element.
+    ```python
+    mul
+    ```
+
+- **DIV:** Divides the second top element of the stack by the top element.
+    ```python
+    div
+    ```
+
+- **MOD:** Computes the remainder of dividing the second top element.
+    ```python
+    mod
+    ```
+
+- **PCHAR:** Prints the character at the top of the stack.
+    ```python
+    pchar
+    ```
+
+- **PSTR:** Prints the string starting at the top of the stack.
+    ```python
+    pstr
+    ```
+
+- **ROTL:** Rotates the stack to the top.
+    ```python
+    rotl
+    ```
+
+- **ROTR:** Rotates the stack to the bottom.
+    ```python
+    rotr
     ```
 
 Feel free to explore and experiment with these commands! 🤓
